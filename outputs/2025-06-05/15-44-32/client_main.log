@@ -1,0 +1,4 @@
+[2025-06-05 15:44:32,859][__main__][INFO] - Loaded tokenizer and data collator for model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+[2025-06-05 15:44:37,280][__main__][INFO] - Dataset formatted Complete
+[2025-06-05 15:44:44,602][root][INFO] - init model_type: Huggingface
+[2025-06-05 16:10:49,695][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

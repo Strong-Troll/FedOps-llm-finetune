@@ -12,7 +12,7 @@ dataset:
   validation_split: 0.2 # Ratio of dividing train data by validation, but Huggingface do not use this.
 
 # client
-task_id: "" # Input your Task Name that you register in FedOps Website
+task_id: "llmfinetune" # Input your Task Name that you register in FedOps Website
 
 # finetune args
 finetune:
