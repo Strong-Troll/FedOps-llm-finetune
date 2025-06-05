@@ -39,7 +39,7 @@ wandb:
 num_epochs: 3 # Number of local epochs (adjust for better fine-tuning)
 batch_size: 16 # Batch size optimized for LLM fine-tuning
 num_rounds: 2 # Number of federated learning rounds
-clients_per_round: 2 # Number of clients participating in each round
+clients_per_round: 1 # Number of clients participating in each round
 
 server:
   strategy:
