@@ -7,3 +7,4 @@ peft
 bitsandbytes
 hydra-core
 numpy==1.26.4
+tf-keras
