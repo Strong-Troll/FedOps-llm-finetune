@@ -1,0 +1,74 @@
+[2025-06-05 18:57:26,596][__main__][INFO] - Loaded tokenizer and data collator for model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+[2025-06-05 18:57:30,799][__main__][INFO] - Dataset formatted Complete
+[2025-06-05 18:57:36,637][root][INFO] - init model_type: Huggingface
+[2025-06-05 19:08:21,827][root][INFO] - bulid model
+[2025-06-05 19:08:21,828][root][INFO] - FL start
+[2025-06-05 19:08:21,834][fedops.client.client_api][INFO] - FL_server_IP:port - ccl.gachon.ac.kr:40032
+[2025-06-05 19:08:21,835][root][INFO] - FL learning ready
+[2025-06-05 19:08:21,835][root][INFO] - fl_task_id: llmfinetune
+[2025-06-05 19:08:21,835][root][INFO] - dataset: medalpaca/medical_meadow_medical_flashcards
+[2025-06-05 19:08:21,835][root][INFO] - output_size: 512
+[2025-06-05 19:08:21,835][root][INFO] - validation_split: 0.2
+[2025-06-05 19:08:21,836][root][INFO] - model_type: Huggingface
+[2025-06-05 19:08:21,836][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated. 
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below: 
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-06-05 19:08:21,837][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-06-05 19:08:21,856][flwr][DEBUG] - Opened insecure gRPC connection (no certificates were passed)
+[2025-06-05 19:08:21,859][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2025-06-05 19:08:21,860][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2025-06-05 19:08:21,866][flwr][DEBUG] - ChannelConnectivity.READY
+[2025-06-05 19:08:22,786][flwr][INFO] - 
+[2025-06-05 19:08:22,787][flwr][INFO] - Received: train message d9d4a6a2-ddab-4e60-a199-e4aaa2a15cc7
+[2025-06-05 19:08:23,288][flwr][ERROR] - Client raised an exception.
+Traceback (most recent call last):
+  File "/home/ccl/anaconda3/envs/YG/lib/python3.12/site-packages/flwr/client/app.py", line 571, in start_client_internal
+    reply_message = client_app(message=message, context=context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/YG/lib/python3.12/site-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/YG/lib/python3.12/site-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/YG/lib/python3.12/site-packages/flwr/client/message_handler/message_handler.py", line 128, in handle_legacy_message_from_msgtype
+    fit_res = maybe_call_fit(
+              ^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/YG/lib/python3.12/site-packages/flwr/client/client.py", line 224, in maybe_call_fit
+    return client.fit(fit_ins)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/YG/lib/python3.12/site-packages/flwr/client/numpy_client.py", line 227, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/YG/lib/python3.12/site-packages/fedops/client/client_fl.py", line 190, in fit
+    trained_model = self.finetune_llm(self.model, self.trainset, self.tokenizer, self.formatting_prompts_func, self.data_collator)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/Desktop/YG/FedOps-llm-finetune/models.py", line 16, in custom_train
+    training_args = TrainingArguments(
+                    ^^^^^^^^^^^^^^^^^^
+TypeError: TrainingArguments.__init__() got an unexpected keyword argument 'device_map'
+[2025-06-05 19:08:23,484][flwr][DEBUG] - gRPC channel closed
+[2025-06-05 19:08:23,509][root][INFO] - notify_fail start
+[2025-06-05 19:08:23,526][root][ERROR] - trainFin
+[2025-06-05 19:08:28,663][root][INFO] - ccl-x-server;58:11:22:93:a7:4b-client close
